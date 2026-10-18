@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARYAN DIGITAL JAAMU 🧿 | Team Dashboard</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18233a;--line:#293650;--text:#eef3ff;--muted:#9ba9c4;--blue:#6ea8fe;--cyan:#4ee0d0;--orange:#ffb454;--red:#ff7b89;--green:#5ce0a0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#17264b 0,#0b1020 42%);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text)}
+.wrap{max-width:1100px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.brand{display:flex;gap:12px;align-items:center}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#6ea8fe,#4ee0d0);display:grid;place-items:center;color:#081225;font-size:24px;font-weight:900}
+h1{font-size:clamp(18px,4vw,26px);margin:0} .sub{font-size:12px;color:var(--muted);margin-top:4px}
+.pill{border:1px solid var(--line);background:#10182a;color:var(--cyan);padding:9px 12px;border-radius:99px;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.stat,.panel{background:linear-gradient(145deg,rgba(24,35,58,.96),rgba(16,24,42,.96));border:1px solid var(--line);border-radius:18px}
+.stat{padding:15px}.stat .label{font-size:12px;color:var(--muted)}.stat strong{font-size:27px;display:block;margin-top:5px}
+.layout{display:grid;grid-template-columns:1fr 1.2fr;gap:14px}.panel{padding:17px;margin-bottom:14px}.panel h2{font-size:17px;margin:0 0 13px}.muted{color:var(--muted);font-size:13px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:11px}.field label{font-size:12px;color:var(--muted)}
+input,select,textarea{width:100%;border:1px solid var(--line);background:#0c1425;color:var(--text);padding:11px 12px;border-radius:11px;font:inherit;outline:none}
+textarea{resize:vertical;min-height:75px}input:focus,select:focus,textarea:focus{border-color:var(--blue)}
+button{border:0;border-radius:11px;padding:10px 13px;font-weight:700;font:inherit;cursor:pointer}
+.primary{background:linear-gradient(135deg,#6ea8fe,#4ee0d0);color:#081225}.secondary{background:#24314c;color:var(--text);border:1px solid var(--line)}.danger{background:#3a202e;color:#ffb5be;border:1px solid #70404d}.actions{display:flex;gap:8px;flex-wrap:wrap}
+.worker-list{display:grid;gap:9px}.worker{display:flex;align-items:center;gap:11px;padding:11px;border:1px solid var(--line);background:#10182a;border-radius:13px}
+.avatar{height:40px;width:40px;border-radius:12px;background:#263a5e;display:grid;place-items:center;color:#b9d6ff;font-weight:800}.worker-info{flex:1;min-width:0}.worker-name{font-weight:700}.worker-role{font-size:12px;color:var(--muted)}.status{font-size:11px;border-radius:99px;padding:5px 8px;background:#26314a;color:#dce7ff;white-space:nowrap}.status.done{background:#12392f;color:#91ffd0}.status.pending{background:#3a2d17;color:#ffd28a}
+.task{padding:13px;border:1px solid var(--line);background:#10182a;border-radius:13px;margin-bottom:9px}.task-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.task-title{font-weight:700;overflow-wrap:anywhere}.task-meta{font-size:12px;color:var(--muted);margin:7px 0}.task-note{font-size:13px;color:#d4def1;white-space:pre-wrap;overflow-wrap:anywhere}
+.task .actions{margin-top:10px}.task select{width:auto;max-width:100%;padding:7px;font-size:12px}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:440px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);font-size:13px}th{color:var(--muted);font-weight:600}
+.footer{text-align:center;color:var(--muted);font-size:11px;padding:12px 0 24px}.notice{border:1px solid #6d5427;background:#2a2416;color:#ffe0a1;border-radius:12px;padding:11px;font-size:12px;line-height:1.5;margin-bottom:14px}
+.empty{color:var(--muted);text-align:center;padding:18px;font-size:13px}
+@media(max-width:760px){.wrap{padding:12px}.stats{grid-template-columns:repeat(2,1fr);gap:9px}.stat{padding:12px}.stat strong{font-size:23px}.layout{grid-template-columns:1fr}.panel{padding:14px}.pill{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><div class="logo">🧿</div><div><h1>ARYAN DIGITAL JAAMU</h1><div class="sub">TEAM WORKSPACE · SUPERVISOR DASHBOARD</div></div></div>
+  <div class="pill">● Demo dashboard · मोबाइल फ्रेंडली</div>
+</header>
+<div class="notice"><b>ज़रूरी:</b> यह शुरुआती डेमो है। रिकॉर्ड इसी ब्राउज़र/डिवाइस में सेव होते हैं। अभी इसमें असली सुरक्षित लॉगिन या सभी डिवाइस पर साझा डेटाबेस नहीं है।</div>
+<section class="stats">
+  <div class="stat"><div class="label">कुल टीम मेंबर</div><strong id="memberCount">4</strong></div>
+  <div class="stat"><div class="label">कुल काम</div><strong id="taskCount">0</strong></div>
+  <div class="stat"><div class="label">Pending काम</div><strong id="pendingCount">0</strong></div>
+  <div class="stat"><div class="label">Completed काम</div><strong id="doneCount">0</strong></div>
+</section>
+<div class="layout">
+  <div>
+    <section class="panel">
+      <h2>👥 टीम मेंबर</h2>
+      <div class="muted" style="margin-bottom:12px">नाम और रोल बदलने के लिए Edit दबाएँ।</div>
+      <div class="worker-list" id="workers"></div>
+      <hr style="border:0;border-top:1px solid var(--line);margin:15px 0">
+      <h2>✏️ मेंबर जोड़ें / एडिट करें</h2>
+      <form id="workerForm">
+        <input type="hidden" id="workerId">
+        <div class="field"><label for="workerName">पूरा नाम</label><input id="workerName" required placeholder="जैसे: Rahul"></div>
+        <div class="field"><label for="workerRole">रोल / काम</label><input id="workerRole" placeholder="जैसे: Graphic Design"></div>
+        <div class="actions"><button class="primary" type="submit">सेव करें</button><button class="secondary" type="button" id="cancelWorker">कैंसल</button></div>
+      </form>
+    </section>
+    <section class="panel">
+      <h2>🗓️ आज की हाजिरी</h2>
+      <div class="field"><label for="attendanceDate">तारीख</label><input type="date" id="attendanceDate"></div>
+      <div class="muted" style="margin-bottom:10px">हर मेंबर के लिए हाजिरी चुनें। रिकॉर्ड सेव रहेगा।</div>
+      <div class="table-wrap"><table><thead><tr><th>नाम</th><th>हाजिरी</th></tr></thead><tbody id="attendanceRows"></tbody></table></div>
+      <button class="primary" id="saveAttendance" style="margin-top:12px">हाजिरी सेव करें</button>
+      <div id="attendanceMessage" class="muted" style="margin-top:8px"></div>
+    </section>
+  </div>
+  <div>
+    <section class="panel">
+      <h2>➕ नया काम दें</h2>
+      <form id="taskForm">
+        <div class="field"><label for="taskTitle">काम का नाम</label><input id="taskTitle" required placeholder="जैसे: वेबसाइट का होम पेज"></div>
+        <div class="field"><label for="taskWorker">किसको काम देना है?</label><select id="taskWorker" required></select></div>
+        <div class="field"><label for="taskDue">डेडलाइन</label><input id="taskDue" type="datetime-local"></div>
+        <div class="field"><label for="taskNote">काम की जानकारी</label><textarea id="taskNote" placeholder="यहाँ काम की डिटेल लिखें..."></textarea></div>
+        <div class="actions"><button class="primary" type="submit">काम सेव करें</button></div>
+      </form>
+    </section>
+    <section class="panel">
+      <h2>📋 काम की लिस्ट</h2>
+      <div class="field"><label for="taskFilter">फ़िल्टर</label><select id="taskFilter"><option value="all">सभी काम</option><option value="Pending">Pending</option><option value="Completed">Completed</option></select></div>
+      <div id="tasks"></div>
+    </section>
+    <section class="panel">
+      <h2>💾 डेटा बैकअप</h2>
+      <p class="muted">बैकअप फ़ाइल डाउनलोड करके रिकॉर्ड सुरक्षित रख सकते हो। उसी ब्राउज़र में JSON बैकअप वापस इम्पोर्ट भी कर सकते हो।</p>
+      <div class="actions"><button class="secondary" id="exportData">बैकअप डाउनलोड</button><label class="secondary" style="display:inline-flex;align-items:center;cursor:pointer">बैकअप इम्पोर्ट<input id="importData" type="file" accept=".json,application/json" style="display:none"></label><button class="danger" id="resetData" type="button">डेमो डेटा रीसेट</button></div>
+      <div id="backupMessage" class="muted" style="margin-top:8px"></div>
+    </section>
+  </div>
+</div>
+<div class="footer">ARYAN DIGITAL JAAMU 🧿 · Team Management Demo</div>
+</div>
+<script>
+const KEY='aryanDigitalJaamuDashboardV1';
+const defaultData={
+ workers:[
+  {id:'w1',name:'Worker 1',role:'Graphic Design'},
+  {id:'w2',name:'Worker 2',role:'Coding'},
+  {id:'w3',name:'Worker 3',role:'Photography'},
+  {id:'w4',name:'Worker 4',role:'Design'}
+ ],
+ tasks:[],attendance:{}
+};
+let data=loadData();
+function loadData(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.workers)&&Array.isArray(x.tasks)&&x.attendance)return x}catch(e){}return structuredClone(defaultData)}
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render()}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function today(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+document.getElementById('attendanceDate').value=today();
+function render(){
+ document.getElementById('memberCount').textContent=data.workers.length;
+ document.getElementById('taskCount').textContent=data.tasks.length;
+ document.getElementById('pendingCount').textContent=data.tasks.filter(t=>t.status!=='Completed').length;
+ document.getElementById('doneCount').textContent=data.tasks.filter(t=>t.status==='Completed').length;
+ const workersEl=document.getElementById('workers');
+ workersEl.innerHTML=data.workers.length?data.workers.map(w=>`<div class="worker"><div class="avatar">${esc((w.name||'?').trim().charAt(0).toUpperCase())}</div><div class="worker-info"><div class="worker-name">${esc(w.name)}</div><div class="worker-role">${esc(w.role||'टीम मेंबर')}</div></div><button class="secondary" onclick="editWorker('${w.id}')">Edit</button><button class="danger" onclick="deleteWorker('${w.id}')">×</button></div>`).join(''):'<div class="empty">अभी कोई मेंबर नहीं है।</div>';
+ const select=document.getElementById('taskWorker'), old=select.value;
+ select.innerHTML=data.workers.map(w=>`<option value="${esc(w.id)}">${esc(w.name)}</option>`).join('');
+ if(data.workers.some(w=>w.id===old))select.value=old;
+ renderAttendance();
+ const filter=document.getElementById('taskFilter').value;
+ const list=data.tasks.filter(t=>filter==='all'||t.status===filter).sort((a,b)=>b.created-a.created);
+ document.getElementById('tasks').innerHTML=list.length?list.map(t=>{const w=data.workers.find(w=>w.id===t.workerId);return `<article class="task"><div class="task-head"><div class="task-title">${esc(t.title)}</div><span class="status ${t.status==='Completed'?'done':'pending'}">${t.status==='Completed'?'Completed':'Pending'}</span></div><div class="task-meta">👤 ${esc(w?w.name:'मेंबर हटाया गया')} ${t.due?' · ⏰ '+esc(t.due.replace('T',' ')):''}</div>${t.note?`<div class="task-note">${esc(t.note)}</div>`:''}<div class="actions"><select aria-label="काम का स्टेटस" onchange="setTaskStatus('${t.id}',this.value)"><option ${t.status==='Pending'?'selected':''}>Pending</option><option ${t.status==='Completed'?'selected':''}>Completed</option></select><button class="secondary" onclick="editTask('${t.id}')">Edit</button><button class="danger" onclick="deleteTask('${t.id}')">हटाएँ</button></div></article>`}).join(''):'<div class="empty">अभी कोई काम नहीं। ऊपर से नया काम जोड़ो।</div>';
+}
+function renderAttendance(){
+ const date=document.getElementById('attendanceDate').value||today(), records=data.attendance[date]||{};
+ document.getElementById('attendanceRows').innerHTML=data.workers.map(w=>`<tr><td>${esc(w.name)}</td><td><select data-att="${w.id}"><option value="Present" ${(records[w.id]||'Present')==='Present'?'selected':''}>Present</option><option value="Absent" ${records[w.id]==='Absent'?'selected':''}>Absent</option><option value="Leave" ${records[w.id]==='Leave'?'selected':''}>Leave</option></select></td></tr>`).join('');
+}
+function editWorker(id){const w=data.workers.find(x=>x.id===id);if(!w)return;document.getElementById('workerId').value=w.id;document.getElementById('workerName').value=w.name;document.getElementById('workerRole').value=w.role;document.getElementById('workerName').focus()}
+function deleteWorker(id){const w=data.workers.find(x=>x.id===id);if(w&&confirm(`${w.name} को टीम से हटाएँ? पुराने काम रिकॉर्ड में रहेंगे।`)){data.workers=data.workers.filter(x=>x.id!==id);save()}}
+function editTask(id){const t=data.tasks.find(x=>x.id===id);if(!t)return;document.getElementById('taskTitle').value=t.title;document.getElementById('taskWorker').value=t.workerId;document.getElementById('taskDue').value=t.due||'';document.getElementById('taskNote').value=t.note||'';document.getElementById('taskForm').dataset.editId=id;document.getElementById('taskTitle').focus();document.querySelector('#taskForm button[type=submit]').textContent='बदला हुआ काम सेव करें'}
+function deleteTask(id){if(confirm('यह काम हटाना है?')){data.tasks=data.tasks.filter(t=>t.id!==id);save()}}
+function setTaskStatus(id,status){const t=data.tasks.find(t=>t.id===id);if(t){t.status=status;save()}}
+document.getElementById('workerForm').addEventListener('submit',e=>{e.preventDefault();const id=document.getElementById('workerId').value,name=document.getElementById('workerName').value.trim(),role=document.getElementById('workerRole').value.trim();if(!name)return;if(id){const w=data.workers.find(w=>w.id===id);if(w){w.name=name;w.role=role}}else data.workers.push({id:'w'+Date.now(),name,role});e.target.reset();document.getElementById('workerId').value='';save()});
+document.getElementById('cancelWorker').addEventListener('click',()=>{document.getElementById('workerForm').reset();document.getElementById('workerId').value=''});
+document.getElementById('taskForm').addEventListener('submit',e=>{e.preventDefault();const title=document.getElementById('taskTitle').value.trim(),workerId=document.getElementById('taskWorker').value,due=document.getElementById('taskDue').value,note=document.getElementById('taskNote').value.trim(),editId=e.target.dataset.editId;if(!title)return;if(editId){const t=data.tasks.find(t=>t.id===editId);if(t)Object.assign(t,{title,workerId,due,note});delete e.target.dataset.editId}else data.tasks.push({id:'t'+Date.now(),title,workerId,due,note,status:'Pending',created:Date.now()});e.target.reset();document.querySelector('#taskForm button[type=submit]').textContent='काम सेव करें';save()});
+document.getElementById('taskFilter').addEventListener('change',render);
+document.getElementById('attendanceDate').addEventListener('change',renderAttendance);
+document.getElementById('saveAttendance').addEventListener('click',()=>{const date=document.getElementById('attendanceDate').value||today();data.attendance[date]=data.attendance[date]||{};document.querySelectorAll('[data-att]').forEach(s=>data.attendance[date][s.dataset.att]=s.value);localStorage.setItem(KEY,JSON.stringify(data));document.getElementById('attendanceMessage').textContent=`${date} की हाजिरी सेव हो गई।`;});
+document.getElementById('exportData').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='aryan-digital-jaamu-backup.json';a.click();URL.revokeObjectURL(url);document.getElementById('backupMessage').textContent='बैकअप डाउनलोड शुरू हो गया।'});
+document.getElementById('importData').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const x=JSON.parse(await f.text());if(!Array.isArray(x.workers)||!Array.isArray(x.tasks)||!x.attendance)throw new Error();data=x;save();document.getElementById('backupMessage').textContent='बैकअप इम्पोर्ट हो गया।'}catch(err){document.getElementById('backupMessage').textContent='यह सही बैकअप फ़ाइल नहीं है।'}e.target.value=''});
+document.getElementById('resetData').addEventListener('click',()=>{if(confirm('डेमो के सभी मेंबर, काम और हाजिरी हटाकर शुरुआत करें? पहले बैकअप डाउनलोड कर लें।')){data=structuredClone(defaultData);save();document.getElementById('backupMessage').textContent='डेमो डेटा रीसेट हो गया।'}});
+render();
+</script>
+</body>
+</html>
